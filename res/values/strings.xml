@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">myapp</string>
+    <string name="screen">0</string>
+    <string name="bOne">1</string>
+    <string name="bTwo">2</string>
+    <string name="bThree">3</string>
+    <string name="bFour">4</string>
+    <string name="bFive">5</string>
+    <string name="bSix">6</string>
+    <string name="bSeven">7</string>
+    <string name="bEight">8</string>
+    <string name="bNine">9</string>
+    <string name="bDot">.</string>
+    <string name="bZero">0</string>
+    <string name="bMinus">-</string>
+    <string name="bPlus">+</string>
+    <string name="bMult">*</string>
+    <string name="bDiv">/</string>
+    <string name="bEqual">=</string>
+    <string name="bCancel">C</string>
+    <string name="bBack">←</string>
+</resources>
