@@ -22,8 +22,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/screen"
                 android:layout_margin="5px"
-                android:textSize="50sp"
-                android:text="999.999999"/>
+                android:textSize="50sp"/>
 
     </LinearLayout>
 
