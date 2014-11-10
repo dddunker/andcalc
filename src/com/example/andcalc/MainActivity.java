@@ -2,6 +2,7 @@ package com.example.andcalc;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -50,51 +51,175 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        screen = (TextView) findViewById(R.id.textView);
-        bOne = (Button) findViewById(R.id.button9);
-        bTwo = (Button) findViewById(R.id.button10);
-        bThree = (Button) findViewById(R.id.button11);
-        bFour = (Button) findViewById(R.id.button5);
-        bFive = (Button) findViewById(R.id.button6);
-        bSix = (Button) findViewById(R.id.button7);
-        bSeven = (Button) findViewById(R.id.button1);
-        bEight = (Button) findViewById(R.id.button2);
-        bNine = (Button) findViewById(R.id.button3);
-        bDot = (Button) findViewById(R.id.button14);
-        bZero = (Button) findViewById(R.id.button13);
-        bMinus = (Button) findViewById(R.id.button8);
-        bPlus = (Button) findViewById(R.id.button4);
-        bMult = (Button) findViewById(R.id.button12);
-        bDiv = (Button) findViewById(R.id.button15);
-        bEqual = (Button) findViewById(R.id.button18);
-        bCancel = (Button) findViewById(R.id.button16);
-        bBack = (Button) findViewById(R.id.button17);
+        screen = (TextView) findViewById(R.id.screen);
+        bOne = (Button) findViewById(R.id.bOne);
+        bTwo = (Button) findViewById(R.id.bTwo);
+        bThree = (Button) findViewById(R.id.bThree);
+        bFour = (Button) findViewById(R.id.bFour);
+        bFive = (Button) findViewById(R.id.bFive);
+        bSix = (Button) findViewById(R.id.bSix);
+        bSeven = (Button) findViewById(R.id.bSeven);
+        bEight = (Button) findViewById(R.id.bEight);
+        bNine = (Button) findViewById(R.id.bNine);
+        bDot = (Button) findViewById(R.id.bDot);
+        bZero = (Button) findViewById(R.id.bZero);
+        bMinus = (Button) findViewById(R.id.bMinus);
+        bPlus = (Button) findViewById(R.id.bPlus);
+        bMult = (Button) findViewById(R.id.bMult);
+        bDiv = (Button) findViewById(R.id.bDiv);
+        bEqual = (Button) findViewById(R.id.bEqual);
+        bCancel = (Button) findViewById(R.id.bCancel);
+        bBack = (Button) findViewById(R.id.bBack);
 
         setViewName();
+        colorize();
+        screen.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+
 
         // создание обработчика
         OnClickListener oclBtn = new OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case R.string.bOne: {
-                        //if (!error)
-                         //   pressedKey("1");
-                        screen.setText("34123");
+                    case R.id.bOne: {
+                        if (!error)
+                            pressedButton("1");
                         break;
                     }
-                    case R.id.button8: {
-//                        if (!error)
-//                            pressedKey("2");
-                        screen.setText("34123");
+                    case R.id.bTwo: {
+                        if (!error)
+                            pressedButton("2");
+                        break;
+                    }
+                    case R.id.bThree: {
+                        if (!error)
+                            pressedButton("3");
+                        break;
+                    }
+                    case R.id.bFour: {
+                        if (!error)
+                            pressedButton("4");
+                        break;
+                    }
+                    case R.id.bFive: {
+                        if (!error)
+                            pressedButton("5");
+                        break;
+                    }
+                    case R.id.bSix: {
+                        if (!error)
+                            pressedButton("6");
+                        break;
+                    }
+                    case R.id.bSeven: {
+                        if (!error)
+                            pressedButton("7");
+                        break;
+                    }
+                    case R.id.bEight: {
+                        if (!error)
+                            pressedButton("8");
+                        break;
+                    }
+                    case R.id.bNine: {
+                        if (!error)
+                            pressedButton("9");
+                        break;
+                    }
+                    case R.id.bDot: {
+                        if (!error)
+                            pressedButton(".");
+                        break;
+                    }
+                    case R.id.bZero: {
+                        if (!error)
+                            pressedButton("0");
+                        break;
+                    }
+                    case R.id.bDiv: {
+                        if (!error)
+                            pressedButton(DIV_OPER);
+                        break;
+                    }
+                    case R.id.bMult: {
+                        if (!error)
+                            pressedButton(MULT_OPER);
+                        break;
+                    }
+                    case R.id.bMinus: {
+                        if (!error)
+                            pressedButton(MINUS_OPER);
+                        break;
+                    }
+                    case R.id.bPlus: {
+                        if (!error)
+                            pressedButton(PLUS_OPER);
+                        break;
+                    }
+                    case R.id.bEqual: {
+                        if (!error)
+                            pressedButton(EQUAL_OPER);
+                        break;
+                    }
+                    case R.id.bCancel: {
+                        pressedButton(CANCEL_OPER);
+                        break;
+                    }
+                    case R.id.bBack: {
+                        pressedButton(BACKSPACE_OPER);
                         break;
                     }
                 }
-
             }
         };
         bOne.setOnClickListener(oclBtn);
         bTwo.setOnClickListener(oclBtn);
+        bThree.setOnClickListener(oclBtn);
+        bFour.setOnClickListener(oclBtn);
+        bFive.setOnClickListener(oclBtn);
+        bSix.setOnClickListener(oclBtn);
+        bSeven.setOnClickListener(oclBtn);
+        bEight.setOnClickListener(oclBtn);
+        bNine.setOnClickListener(oclBtn);
+        bDot.setOnClickListener(oclBtn);
+        bZero.setOnClickListener(oclBtn);
+        bDiv.setOnClickListener(oclBtn);
+        bMult.setOnClickListener(oclBtn);
+        bMinus.setOnClickListener(oclBtn);
+        bPlus.setOnClickListener(oclBtn);
+        bEqual.setOnClickListener(oclBtn);
+        bCancel.setOnClickListener(oclBtn);
+        bBack.setOnClickListener(oclBtn);
+    }
+
+    private void colorize() {
+        screen.setBackgroundColor(getResources().getColor(R.color.screen));
+        screen.setTextColor(getResources().getColor(R.color.screenText));
+        bOne.setBackgroundColor(getResources().getColor(R.color.button_normal));
+        bOne.setTextColor(getResources().getColor(R.color.buttonText));
+        bOne.setHighlightColor(getResources().getColor(R.color.background));
+        bTwo.setBackgroundColor(getResources().getColor(R.color.button_normal));
+        bTwo.setTextColor(getResources().getColor(R.color.buttonText));
+        bTwo.setHighlightColor(getResources().getColor(R.color.background));
+
+        bOne.setBackgroundResource(R.drawable.button);
+        bTwo.setBackgroundResource(R.drawable.button);
+        bThree.setBackgroundResource(R.drawable.button);
+        bFour.setBackgroundResource(R.drawable.button);
+        bFive.setBackgroundResource(R.drawable.button);
+        bSix.setBackgroundResource(R.drawable.button);
+        bSeven.setBackgroundResource(R.drawable.button);
+        bEight.setBackgroundResource(R.drawable.button);
+        bNine.setBackgroundResource(R.drawable.button);
+        bDot.setBackgroundResource(R.drawable.button);
+        bZero.setBackgroundResource(R.drawable.button);
+        bDiv.setBackgroundResource(R.drawable.button);
+        bMult.setBackgroundResource(R.drawable.button);
+        bMinus.setBackgroundResource(R.drawable.button);
+        bPlus.setBackgroundResource(R.drawable.button);
+        bEqual.setBackgroundResource(R.drawable.button);
+        bCancel.setBackgroundResource(R.drawable.button);
+        bBack.setBackgroundResource(R.drawable.button);
     }
 
     private void setViewName() {
@@ -171,7 +296,7 @@ public class MainActivity extends Activity {
         } else {
             if (screen.getText().equals("")) {
                 out = "0.";
-            } else if (screen.getText().toString().contains(".")) {
+            } else if (!screen.getText().toString().contains(".")) {
                 out = screen.getText() + in;
             } else {
                 out = (String) screen.getText();
@@ -215,7 +340,7 @@ public class MainActivity extends Activity {
         return out;
     }
 
-    private void pressedKey(String instruction) {
+    private void pressedButton(String instruction) {
         /* number button was pressed */
         if (!isOperation(instruction)) {
             displayOperand(instruction);
