@@ -195,31 +195,43 @@ public class MainActivity extends Activity {
     private void colorize() {
         screen.setBackgroundColor(getResources().getColor(R.color.screen));
         screen.setTextColor(getResources().getColor(R.color.screenText));
-        bOne.setBackgroundColor(getResources().getColor(R.color.button_normal));
-        bOne.setTextColor(getResources().getColor(R.color.buttonText));
-        bOne.setHighlightColor(getResources().getColor(R.color.background));
-        bTwo.setBackgroundColor(getResources().getColor(R.color.button_normal));
-        bTwo.setTextColor(getResources().getColor(R.color.buttonText));
-        bTwo.setHighlightColor(getResources().getColor(R.color.background));
+        bOne.setBackgroundResource(R.drawable.num_buttons);
+        bTwo.setBackgroundResource(R.drawable.num_buttons);
+        bThree.setBackgroundResource(R.drawable.num_buttons);
+        bFour.setBackgroundResource(R.drawable.num_buttons);
+        bFive.setBackgroundResource(R.drawable.num_buttons);
+        bSix.setBackgroundResource(R.drawable.num_buttons);
+        bSeven.setBackgroundResource(R.drawable.num_buttons);
+        bEight.setBackgroundResource(R.drawable.num_buttons);
+        bNine.setBackgroundResource(R.drawable.num_buttons);
+        bDot.setBackgroundResource(R.drawable.num_buttons);
+        bZero.setBackgroundResource(R.drawable.num_buttons);
+        bDiv.setBackgroundResource(R.drawable.calc_buttons);
+        bMult.setBackgroundResource(R.drawable.calc_buttons);
+        bMinus.setBackgroundResource(R.drawable.calc_buttons);
+        bPlus.setBackgroundResource(R.drawable.calc_buttons);
+        bEqual.setBackgroundResource(R.drawable.oper_buttons);
+        bCancel.setBackgroundResource(R.drawable.oper_buttons);
+        bBack.setBackgroundResource(R.drawable.oper_buttons);
 
-        bOne.setBackgroundResource(R.drawable.button);
-        bTwo.setBackgroundResource(R.drawable.button);
-        bThree.setBackgroundResource(R.drawable.button);
-        bFour.setBackgroundResource(R.drawable.button);
-        bFive.setBackgroundResource(R.drawable.button);
-        bSix.setBackgroundResource(R.drawable.button);
-        bSeven.setBackgroundResource(R.drawable.button);
-        bEight.setBackgroundResource(R.drawable.button);
-        bNine.setBackgroundResource(R.drawable.button);
-        bDot.setBackgroundResource(R.drawable.button);
-        bZero.setBackgroundResource(R.drawable.button);
-        bDiv.setBackgroundResource(R.drawable.button);
-        bMult.setBackgroundResource(R.drawable.button);
-        bMinus.setBackgroundResource(R.drawable.button);
-        bPlus.setBackgroundResource(R.drawable.button);
-        bEqual.setBackgroundResource(R.drawable.button);
-        bCancel.setBackgroundResource(R.drawable.button);
-        bBack.setBackgroundResource(R.drawable.button);
+        bCancel.setTextColor(getResources().getColor(R.color.buttonText));
+        bBack.setTextColor(getResources().getColor(R.color.buttonText));
+        bEqual.setTextColor(getResources().getColor(R.color.buttonText));
+        bPlus.setTextColor(getResources().getColor(R.color.buttonText));
+        bMinus.setTextColor(getResources().getColor(R.color.buttonText));
+        bDiv.setTextColor(getResources().getColor(R.color.buttonText));
+        bMult.setTextColor(getResources().getColor(R.color.buttonText));
+        bOne.setTextColor(getResources().getColor(R.color.buttonText));
+        bTwo.setTextColor(getResources().getColor(R.color.buttonText));
+        bThree.setTextColor(getResources().getColor(R.color.buttonText));
+        bFour.setTextColor(getResources().getColor(R.color.buttonText));
+        bFive.setTextColor(getResources().getColor(R.color.buttonText));
+        bSix.setTextColor(getResources().getColor(R.color.buttonText));
+        bSeven.setTextColor(getResources().getColor(R.color.buttonText));
+        bEight.setTextColor(getResources().getColor(R.color.buttonText));
+        bNine.setTextColor(getResources().getColor(R.color.buttonText));
+        bZero.setTextColor(getResources().getColor(R.color.buttonText));
+        bDot.setTextColor(getResources().getColor(R.color.buttonText));
     }
 
     private void setViewName() {
