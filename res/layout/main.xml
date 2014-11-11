@@ -19,12 +19,11 @@
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/screen"
                 android:layout_margin="5px"
-                android:textSize="50sp"
+                android:textSize="45sp"
                 android:paddingRight="8sp"
-                android:text="23423234"/>
+                android:paddingLeft="1sp"/>
 
     </LinearLayout>
 
@@ -55,37 +54,36 @@
                     android:weightSum="4.07">
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bSeven"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bEight"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bNine"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bDiv"
                         android:layout_weight="1.07"
-                        android:layout_margin="5px"/>
-
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -96,36 +94,36 @@
                     android:weightSum="4.07">
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bFour"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bFive"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bSix"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bMult"
                         android:layout_weight="1.07"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -136,36 +134,36 @@
                     android:weightSum="4.07">
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bOne"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bTwo"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bThree"
                         android:layout_weight="1"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bMinus"
                         android:layout_weight="1.07"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -176,29 +174,29 @@
                     android:weightSum="8.25">
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bZero"
                         android:layout_weight="1.95"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bDot"
                         android:layout_weight="3.05"
-                        android:layout_margin="5px"/>
+                        android:layout_margin="5px"
+                        android:textSize="50sp"/>
 
                 <Button
-                        style="?android:attr/buttonStyleSmall"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:id="@+id/bPlus"
                         android:layout_weight="3.25"
-                        android:layout_margin="5px"/>
-
+                        android:layout_margin="5px"
+                        android:textSize="50sp"
+                        android:text="+"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -211,28 +209,27 @@
                 android:weightSum="4">
 
             <Button
-                    style="?android:attr/buttonStyleSmall"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/bCancel"
                     android:layout_weight="1.5"
-                    android:layout_margin="5px"/>
+                    android:layout_margin="5px"
+                    android:textSize="50sp"/>
 
             <Button
-                    style="?android:attr/buttonStyleSmall"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/bBack"
                     android:layout_weight="1.5"
-                    android:layout_margin="5px"/>
+                    android:layout_margin="5px"
+                    android:textSize="40sp"/>
             <Button
-                    style="?android:attr/buttonStyleSmall"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/bEqual"
                     android:layout_weight="1"
-                    android:layout_margin="5px"/>
-
+                    android:layout_margin="5px"
+                    android:textSize="50sp"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">myapp</string>
+    <string name="app_name">Calculator</string>
     <string name="screen">0</string>
     <string name="bOne">1</string>
     <string name="bTwo">2</string>

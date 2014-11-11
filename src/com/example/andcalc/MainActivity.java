@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
@@ -49,6 +50,7 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); // do not show title bar
         setContentView(R.layout.main);
 
         screen = (TextView) findViewById(R.id.screen);
@@ -74,7 +76,6 @@ public class MainActivity extends Activity {
         setViewName();
         colorize();
         screen.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
-
 
         // создание обработчика
         OnClickListener oclBtn = new OnClickListener() {
@@ -193,8 +194,8 @@ public class MainActivity extends Activity {
     }
 
     private void colorize() {
-        screen.setBackgroundColor(getResources().getColor(R.color.screen));
-        screen.setTextColor(getResources().getColor(R.color.screenText));
+        screen.setBackgroundResource(R.drawable.screen_border);
+        this.getWindow().getDecorView().setBackgroundResource(R.color.background);
         bOne.setBackgroundResource(R.drawable.num_buttons);
         bTwo.setBackgroundResource(R.drawable.num_buttons);
         bThree.setBackgroundResource(R.drawable.num_buttons);
@@ -206,32 +207,33 @@ public class MainActivity extends Activity {
         bNine.setBackgroundResource(R.drawable.num_buttons);
         bDot.setBackgroundResource(R.drawable.num_buttons);
         bZero.setBackgroundResource(R.drawable.num_buttons);
-        bDiv.setBackgroundResource(R.drawable.calc_buttons);
-        bMult.setBackgroundResource(R.drawable.calc_buttons);
-        bMinus.setBackgroundResource(R.drawable.calc_buttons);
-        bPlus.setBackgroundResource(R.drawable.calc_buttons);
+        bDiv.setBackgroundResource(R.drawable.oper_buttons);
+        bMult.setBackgroundResource(R.drawable.oper_buttons);
+        bMinus.setBackgroundResource(R.drawable.oper_buttons);
+        bPlus.setBackgroundResource(R.drawable.oper_buttons);
         bEqual.setBackgroundResource(R.drawable.oper_buttons);
-        bCancel.setBackgroundResource(R.drawable.oper_buttons);
-        bBack.setBackgroundResource(R.drawable.oper_buttons);
+        bCancel.setBackgroundResource(R.drawable.clear_buttons);
+        bBack.setBackgroundResource(R.drawable.clear_buttons);
 
-        bCancel.setTextColor(getResources().getColor(R.color.buttonText));
-        bBack.setTextColor(getResources().getColor(R.color.buttonText));
-        bEqual.setTextColor(getResources().getColor(R.color.buttonText));
-        bPlus.setTextColor(getResources().getColor(R.color.buttonText));
-        bMinus.setTextColor(getResources().getColor(R.color.buttonText));
-        bDiv.setTextColor(getResources().getColor(R.color.buttonText));
-        bMult.setTextColor(getResources().getColor(R.color.buttonText));
-        bOne.setTextColor(getResources().getColor(R.color.buttonText));
-        bTwo.setTextColor(getResources().getColor(R.color.buttonText));
-        bThree.setTextColor(getResources().getColor(R.color.buttonText));
-        bFour.setTextColor(getResources().getColor(R.color.buttonText));
-        bFive.setTextColor(getResources().getColor(R.color.buttonText));
-        bSix.setTextColor(getResources().getColor(R.color.buttonText));
-        bSeven.setTextColor(getResources().getColor(R.color.buttonText));
-        bEight.setTextColor(getResources().getColor(R.color.buttonText));
-        bNine.setTextColor(getResources().getColor(R.color.buttonText));
-        bZero.setTextColor(getResources().getColor(R.color.buttonText));
-        bDot.setTextColor(getResources().getColor(R.color.buttonText));
+        screen.setTextColor(getResources().getColor(R.color.screenText));
+        bCancel.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bBack.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bEqual.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bPlus.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bMinus.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bDiv.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bMult.setTextColor(getResources().getColor(R.color.oper_buttonText));
+        bOne.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bTwo.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bThree.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bFour.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bFive.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bSix.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bSeven.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bEight.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bNine.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bZero.setTextColor(getResources().getColor(R.color.num_buttonText));
+        bDot.setTextColor(getResources().getColor(R.color.num_buttonText));
     }
 
     private void setViewName() {
@@ -346,6 +348,7 @@ public class MainActivity extends Activity {
             out = out.substring(0, 11);
             if (isAnswer) {
                 out = "e" + out;
+                out = out.substring(0, 11);
                 error = true;
             }
         }
