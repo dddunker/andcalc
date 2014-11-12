@@ -21,11 +21,12 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/screen"
                 android:layout_margin="2dp"
-                android:textSize="53sp"
+                android:textSize="45sp"
                 android:paddingEnd="8sp"
                 android:paddingRight="8sp"
                 android:paddingStart="1sp"
-                android:paddingLeft="1sp"/>
+                android:paddingLeft="1sp"
+                android:text="e1234567890"/>
 
     </LinearLayout>
 

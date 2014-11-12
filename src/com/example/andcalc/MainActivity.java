@@ -1,7 +1,9 @@
 package com.example.andcalc;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -76,6 +78,7 @@ public class MainActivity extends Activity {
         setViewName();
         colorize();
         screen.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+        screen.setHorizontallyScrolling(false);
 
         // создание обработчика
         OnClickListener oclBtn = new OnClickListener() {
@@ -383,10 +386,26 @@ public class MainActivity extends Activity {
         }
     }
 
-    private static String doCalc(String firstNum, String secondNum, String operation) {
-        String result = "";
-        BigDecimal f = new BigDecimal(firstNum);
-        BigDecimal s = new BigDecimal(secondNum);
+    private String doCalc(String firstNum, String secondNum, String operation) {
+        String result = "0";
+        BigDecimal f;
+        BigDecimal s;
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        try {
+            f = new BigDecimal(firstNum);
+        } catch (Exception e) {
+            v.vibrate(1000);
+            clearParams();
+            return "0";
+        }
+        try {
+            s = new BigDecimal(secondNum);
+        } catch (Exception e) {
+            v.vibrate(1000);
+            String tmpF = firstNum;
+            clearParams();
+            return "0";
+        }
         if (operation.equals(PLUS_OPER)) {
             f = f.add(s);
             result = String.valueOf(f);
@@ -397,8 +416,14 @@ public class MainActivity extends Activity {
             f = f.multiply(s);
             result = String.valueOf(f);
         } else if (operation.equals(DIV_OPER)) {
-            BigDecimal bd3 = f.divide(s, 9, BigDecimal.ROUND_HALF_UP);
-            result = String.valueOf(bd3);
+            try {
+                BigDecimal bd3 = f.divide(s, 9, BigDecimal.ROUND_HALF_UP);
+                result = String.valueOf(bd3);
+            } catch (ArithmeticException e) {
+                v.vibrate(1000);
+                clearParams();
+                return "0";
+            }
         }
         return result;
     }
