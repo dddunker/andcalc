@@ -25,7 +25,8 @@
                 android:paddingEnd="8sp"
                 android:paddingRight="8sp"
                 android:paddingStart="1sp"
-                android:paddingLeft="1sp"/>
+                android:paddingLeft="1sp"
+                android:maxLines="1"/>
 
     </LinearLayout>
 

@@ -1,15 +1,19 @@
-package com.example.andcalc;
+package com.company.andcalc;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import com.example.andcalc.R;
 
 import java.math.BigDecimal;
 
@@ -48,6 +52,7 @@ public class MainActivity extends Activity {
     private static Button bEqual;
     private static Button bCancel;
     private static Button bBack;
+    private Vibrator vibro;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +80,7 @@ public class MainActivity extends Activity {
         bCancel = (Button) findViewById(R.id.bCancel);
         bBack = (Button) findViewById(R.id.bBack);
 
+        vibro = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         setViewName();
         colorize();
         screen.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
@@ -309,7 +315,7 @@ public class MainActivity extends Activity {
         if (!in.equals(".")) {
             if (!screen.getText().equals("0"))
                 out = screen.getText() + in;
-            else out = in;
+            else return in;
         } else {
             if (screen.getText().equals("")) {
                 out = "0.";
@@ -324,8 +330,7 @@ public class MainActivity extends Activity {
 
     private static String expChecker (String in) {
         if (in.contains("E")) {
-            in = "e" + prevScreen;
-            error = true;
+            return setError();
         }
         return in;
     }
@@ -340,8 +345,7 @@ public class MainActivity extends Activity {
                         out = out.substring(0, 10);
                     else out = out.substring(0, 11);
                     if (isAnswer) {
-                        out = "e" + out + ".";
-                        error = true;
+                        return setError();
                     }
                 } else {
                     out = out.substring(0, 11);
@@ -350,22 +354,22 @@ public class MainActivity extends Activity {
         } else if (out.length() > 11) {
             out = out.substring(0, 11);
             if (isAnswer) {
-                out = "e" + out;
-                out = out.substring(0, 11);
-                error = true;
+                return setError();
             }
         }
         return out;
     }
 
     private void pressedButton(String instruction) {
+//        screen.setTypeface(null, Typeface.BOLD);
+        vibro.vibrate(10);
         /* number button was pressed */
         if (!isOperation(instruction)) {
             displayOperand(instruction);
         }
         /* operation button was pressed */
         else {
-            if (instruction.equals(EQUAL_OPER)) {
+            if (instruction.equals(EQUAL_OPER) && firstNum.length() != 0) {
                 secondNum = (String) screen.getText();
                 if (tmpSecondNum.length() == 0)
                     tmpSecondNum = secondNum;
@@ -387,22 +391,14 @@ public class MainActivity extends Activity {
     }
 
     private String doCalc(String firstNum, String secondNum, String operation) {
-        String result = "0";
+        String result = (String) screen.getText();
         BigDecimal f;
         BigDecimal s;
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         try {
             f = new BigDecimal(firstNum);
-        } catch (Exception e) {
-            v.vibrate(1000);
-            clearParams();
-            return "0";
-        }
-        try {
             s = new BigDecimal(secondNum);
         } catch (Exception e) {
-            v.vibrate(1000);
-            String tmpF = firstNum;
+            vibro.vibrate(100);
             clearParams();
             return "0";
         }
@@ -420,7 +416,7 @@ public class MainActivity extends Activity {
                 BigDecimal bd3 = f.divide(s, 9, BigDecimal.ROUND_HALF_UP);
                 result = String.valueOf(bd3);
             } catch (ArithmeticException e) {
-                v.vibrate(1000);
+                vibro.vibrate(100);
                 clearParams();
                 return "0";
             }
@@ -457,6 +453,18 @@ public class MainActivity extends Activity {
                 screen.setText(screen.getText().subSequence(0, screen.getText().length() - 1));
             else screen.setText("0");
         }
+    }
+
+    private static String setError() {
+        String out;
+        out = "e" + prevScreen;
+        try {
+            out = out.substring(0, 12);
+        } catch (Exception ignored) {
+
+        }
+        error = true;
+        return out;
     }
 
     private static void clearScreen() {
